@@ -1,7 +1,5 @@
 // INT_Pin_Interrupt.c
 
-// Note: This program does NOT work acceptably, the purpose is to show why interrrupts are necessary, see the other two programs for further details
-
 // switch on PD2 (pin 4)
 // LED on PC4 (pin 27), cycles via delay in main()
 // LED on PC5 (pin 28), responds to button press (sort of)
@@ -74,15 +72,13 @@ int main(void) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ISR(INT0_vect) {
-	
 	if(BIT_IS_CLEAR(PIND, PD2)) {			// if switch is pressed (logic low)
 		PORTC |= (1 << PC5);				// turn on PC5 LED
-		} else if(BIT_IS_SET(PIND, PD2)) {		// else if switch is not pressed (logic low)
+	} else if(BIT_IS_SET(PIND, PD2)) {		// else if switch is not pressed (logic low)
 		PORTC &= ~(1 << PC5);				// turn off PC5 LED
-		} else {
+	} else {
 		// ideally should never get here, but may occasionally due to timing
 	}
-	
 }
 
 
