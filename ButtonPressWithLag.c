@@ -7,7 +7,7 @@
 // LED on PC5 (pin 28), responds to button press (sort of)
 
 #ifndef F_CPU					// if F_CPU was not defined in Project -> Properties
-#define F_CPU 1000000UL			// define it now as 1 GHz unsigned long
+#define F_CPU 1000000UL			// define it now as 1 MHz unsigned long
 #endif
 
 #include <avr/io.h>				// this is always included in AVR programs
@@ -26,7 +26,7 @@ int main(void) {
 	
 	while (1) {					// begin infinite loop
 		
-		PORTC ^= (1 << PC4);	// toggle LED on PC5
+		PORTC ^= (1 << PC4);	// toggle LED on PC4
 		_delay_ms(1500);		// delay 1.5 sec
 		
 								// note that because of the delay on the previous line, the following button press exhibits extreme lag
