@@ -2,7 +2,7 @@
 
 // switch on PD2/PCINT18 (pin 4)
 // LED on PC4 (pin 27), cycles via delay in main()
-// LED on PC5 (pin 28), responds to button press (sort of)
+// LED on PC5 (pin 28), responds to button press
 
 #ifndef F_CPU					// if F_CPU was not defined in Project -> Properties
 #define F_CPU 1000000UL			// define it now as 1 MHz unsigned long
